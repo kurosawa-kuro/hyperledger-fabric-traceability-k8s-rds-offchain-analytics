@@ -1,0 +1,39 @@
+## 3. バックエンド
+
+- **技術スタック**: Go + Gin フレームワーク
+- **API機能**:  
+  1. 「Hello World」形式の JSONレスポンス  
+  2. コンソールログ出力  
+- **環境変数管理**:
+  - **ローカル開発用**: `.env.dev` または `config.dev.yaml`  
+  - **本番環境用**: `.env.prod` または `config.prod.yaml`  
+  - Goアプリ起動時に環境変数を読み込み、APIエンドポイントやログレベルなどの設定値を参照する。
+
+  実装方針可能な限りファイル数は少なく、MVC分離もこの時点では不要
+
+  [ec2-user@ip-172-26-1-35 backend]$ go version
+go version go1.20.3 linux/amd64
+[ec2-user@ip-172-26-1-35 backend]$ 
+
+
+実装したGo Ginバックエンド機能の概要
+基本構成
+フレームワーク：Go + Gin
+シンプルな構造：単一のmain.goファイルに機能を実装
+環境設定：.env.devと.env.prodファイルで環境変数管理
+router.GET("/" はhealth
+
+api/hello はhello world のレスポンス
+
+環境変数に基づく動的な設定（ポート番号、APIバージョンなど）
+環境に応じたログレベル設定
+Dockerサポート
+マルチステージビルド
+アルパイン軽量イメージ使用
+環境変数ファイルをコンテナにコピー
+使用方法
+ローカル開発: GO_ENV=dev go run main.go
+本番環境: GO_ENV=prod go run main.go
+Docker: docker build -t gin-backend . および docker run -p 8080:8080 gin-backend
+これで要件を満たす最小限のGoバックエンドが実装されました。必要に応じて機能を拡張できます。
+

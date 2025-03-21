@@ -1,0 +1,17 @@
+## 2. フロントエンド
+creat nextappで選択すべき項目から教えて
+
+パス
+
+/home/ec2-user/dev/terraform-fargate-fullstack-ts2/src/frontend
+
+- **技術スタック**: Next.js (TypeScript)
+- **主要機能**:  
+  1. Hello World 表示  
+  2. Go バックエンドのAPIレスポンス表示  
+  3. 初期実装時は CSR（クライアントサイドレンダリング）のみで可  
+- **環境変数管理**:
+  - **ローカル開発用**: `.env.local` または `.env.development.local`  
+  - **本番環境用**: `.env.production`  
+  - Next.jsではビルド時・実行時に環境変数を読み込む仕組みがあるため、必要な項目を `.env.*` に定義する。  
+
